@@ -15,7 +15,7 @@ function Accordion({ items }) {
       {items.map((item, index) => {
         return (
           <div key={index} className="accordion-item">
-            <div className="accordion-title" onClick={() => handleClick(index)}>
+            <div className="accordion-title" style={{ backgroundColor: (openIndex === index) ? "rgb(224, 224, 224)" : '' }} onClick={() => handleClick(index)}>
               <p>{item.title} {openIndex === index ? <FaChevronUp className="right" /> : <FaChevronDown className="right" />}</p>
             </div>
             {openIndex === index && <div className="accordion-content">
