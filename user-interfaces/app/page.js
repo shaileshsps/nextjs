@@ -2,6 +2,7 @@
 import ProgressBar from "./components/progressbar";
 import Accordion from "./components/accordion";
 import "./style.css";
+import ChipsInput from "./components/chips-input";
 
 const bars = [0, 5, 10, 35, 50, 75, 100];
 
@@ -43,6 +44,11 @@ export default function Home() {
         <h1>Accordion</h1>
         <Accordion items={accordianItems} />
       </div>
+      {/* Chips Input */}
+      <div style={{ textAlign: 'center' }}>
+        <h1>Chips Input</h1>
+        <ChipsInput />
+      </div >
     </>
   );
 }
