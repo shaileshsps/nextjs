@@ -19,7 +19,7 @@ function ChipsInput() {
   }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "40px 0" }}>
+    <div>
       <input
         type="text"
         placeholder="Type a chip and press tag"
@@ -28,9 +28,9 @@ function ChipsInput() {
         onChange={(e) => setinputText(e.target.value)}
         onKeyDown={(e) => handleKeyDown(e)}
       />
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", flexDirection: "column" }}>
         {chips.map((chip, index) => (
-          <div key={index} style={{ background: "grey", width: "130px", height: "50px", borderRadius: "10px", color: "white", margin: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div key={index} style={{ background: "grey", width: "130px", height: "50px", borderRadius: "10px", color: "white", margin: "10px", display: "flex", alignItems: "center", justifyContent: "end" }}>
             {chip}
             <button style={{ margin: "0 20px", float: "right", color: "red" }} onClick={() => handleDeleteClick(index)}>X</button>
           </div>

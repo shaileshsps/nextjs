@@ -56,32 +56,34 @@ export default function Home() {
 
   return (
     <>
-      {/* Progress Bar */}
-      <div style={{ textAlign: 'center' }}>
-        <h1>Progress Bar</h1>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          {
-            bars.map((value, index) => (
+      <div style={{ justifyItems: "center" }}>
+        {/* Progress Bar */}
+        <div>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100vw" }}>
+            <h1>Progress Bar</h1>
+            {
+              bars.map((value, index) => (
           /* return */ <ProgressBar key={index} progress={value} />
-            ))
-          }
+              ))
+            }
+          </div>
         </div>
-      </div>
-      {/* Accordion */}
-      <div style={{ textAlign: 'center' }}>
-        <h1>Accordion</h1>
-        <Accordion items={accordianItems} />
-      </div>
-      {/* Chips Input */}
-      <div style={{ textAlign: 'center' }}>
-        <h1>Chips Input</h1>
-        <ChipsInput />
-      </div>
-      {/* Nested Checkboxes */}
-      <div style={{ textAlign: 'center' }}>
-        <h1>Nested Checkboxes</h1>
-        <Checkboxes data={CheckboxesData} />
-      </div>
+        {/* Accordion */}
+        <div>
+          <h1 style={{ textAlign: "center" }}>Accordion</h1>
+          <Accordion items={accordianItems} />
+        </div>
+        {/* Chips Input */}
+        <div>
+          <h1 style={{ textAlign: "center" }}>Chips Input</h1>
+          <ChipsInput />
+        </div>
+        {/* Nested Checkboxes */}
+        <div>
+          <h1>Nested Checkboxes</h1>
+          <Checkboxes data={CheckboxesData} />
+        </div>
+      </div >
     </>
   );
 }
