@@ -32,7 +32,7 @@ function ChipsInput() {
         {chips.map((chip, index) => (
           <div key={index} style={{ background: "grey", width: "130px", height: "50px", borderRadius: "10px", color: "white", margin: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
             {chip}
-            <button style={{ margin: "0 20px", float: "right" }} onClick={() => handleDeleteClick(index)}>X</button>
+            <button style={{ margin: "0 20px", float: "right", color: "red" }} onClick={() => handleDeleteClick(index)}>X</button>
           </div>
         ))}
       </div>
