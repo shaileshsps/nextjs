@@ -7,6 +7,14 @@ export default function Checkboxes({ data }) {
   const handleOnChange = (isChecked, node) => {
     setChecked((prev) => {
       const newState = { ...prev, [node.id]: isChecked }
+
+
+      const updateChildren = (node) => {
+        node.children && node.children.map((child) => {
+          newState[child.id] = isChecked
+        })
+      }
+      updateChildren(node)
       return newState;
     })
   }
