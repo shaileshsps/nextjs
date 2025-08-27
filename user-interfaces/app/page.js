@@ -3,7 +3,7 @@ import ProgressBar from "./components/progressbar";
 import Accordion from "./components/accordion";
 import "./style.css";
 import ChipsInput from "./components/chips-input";
-import Checkboxes from "./components/nested-checkboxes";
+import NestedCheckboxes from "./components/nested-checkboxes";
 
 const bars = [0, 5, 10, 35, 50, 75, 100];
 
@@ -81,7 +81,7 @@ export default function Home() {
         {/* Nested Checkboxes */}
         <div>
           <h1>Nested Checkboxes</h1>
-          <Checkboxes data={CheckboxesData} />
+          <NestedCheckboxes data={CheckboxesData} />
         </div>
       </div >
     </>

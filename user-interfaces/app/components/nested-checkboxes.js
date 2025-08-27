@@ -1,17 +1,14 @@
 import { useState } from "react";
 
-export default function Checkboxes({ data }) {
-
-  const [checked, setChecked] = useState({});
+const Checkboxes = ({ data, checked, setChecked }) => {
 
   const handleOnChange = (isChecked, node) => {
     setChecked((prev) => {
       const newState = { ...prev, [node.id]: isChecked }
-
-
       const updateChildren = (node) => {
         node.children && node.children.map((child) => {
-          newState[child.id] = isChecked
+          newState[child.id] = isChecked;
+          child.children && updateChildren(child)
         })
       }
       updateChildren(node)
@@ -29,10 +26,20 @@ export default function Checkboxes({ data }) {
               onChange={(e) => handleOnChange(e.target.checked, node)}
             />
             {node.label}
-            {node.children && <Checkboxes data={node.children} />}
+            {node.children && <Checkboxes data={node.children} checked={checked} setChecked={setChecked} />}
           </div>
         ))
       }
     </div >
+  );
+}
+
+export default function NestedCheckboxes({ data }) {
+  const [checked, setChecked] = useState({});
+
+  return (
+    <div>
+      <Checkboxes data={data} checked={checked} setChecked={setChecked} />
+    </div>
   );
 }
