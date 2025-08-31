@@ -27,33 +27,6 @@ export default function Home() {
     },
   ];
 
-  const CheckboxesData = [
-    {
-      id: 1,
-      label: "Fruits",
-      children: [
-        { id: 2, label: "Apple" },
-        { id: 3, label: "Banana" },
-        {
-          id: 4,
-          label: "Citrus",
-          children: [
-            { id: 5, label: "Orange" },
-            { id: 6, label: "Lemon" },
-          ],
-        },
-      ],
-    },
-    {
-      id: 7,
-      label: "Vegetables",
-      children: [
-        { id: 8, label: "Carrot" },
-        { id: 9, label: "Broccoli" },
-      ],
-    },
-  ];
-
   return (
     <>
       <div style={{ justifyItems: "center" }}>
@@ -81,7 +54,7 @@ export default function Home() {
         {/* Nested Checkboxes */}
         <div>
           <h1>Nested Checkboxes</h1>
-          <NestedCheckboxes data={CheckboxesData} />
+          <NestedCheckboxes />
         </div>
       </div >
     </>
