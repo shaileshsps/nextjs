@@ -44,12 +44,12 @@ const Checkboxes = ({ data, checked, setChecked }) => {
         if (!node.children) return newState[node.id] || false;
         newState[node.id] = node.children.every((child) => {
           verifyChecked(child)
-        })
+        });
+        return newState[node.id];
       }
       CheckboxesData.forEach(node => {
         verifyChecked(node)
       });
-      return newState;
     })
   }
 
